@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link th:href="@{/css/paginas-styles.css}" rel="stylesheet">
+    <title>Perfil do Pet</title>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="profile-container" id="paginas">
+        <div id="petcontainer" class="details-container">
+            <div class="profile-photo ">
+                <img th:src="@{/imagens/{filename}(filename=${pet.profileImagePath != null && !pet.profileImagePath.isEmpty() ? pet.profileImagePath : 'default-pet.png'})}"
+                                    alt="Foto do Pet" style="width: 50vw;height: fit-content;max-width: 400px;min-width: 200px;" />
+            </div>
+            <div class="profile-info card detail-card border-0">
+                <ul style="list-style-type: none;">
+                    <li><strong>Nome:</strong>
+                        <p th:text="${pet.nome}">Nome do Animal</p>
+                    </li>
+                    <li><strong>Espécie:</strong>
+                        <p th:text="${pet.especie}">Especie</p>
+                    </li>
+                    <li><strong>Raça:</strong>
+                        <p th:text="${pet.raca}">Raça</p>
+                    </li>
+                    <li><strong>Idade:</strong>
+                        <p th:text="${pet.idade}">Idade</p>
+                    </li>
+                    <li><strong>temperamento:</strong>
+                        <p th:text="${pet.temperamento}">Idade</p>
+                    </li>
+                    <li><strong>Sobre <span th:text="${pet.nome}"></span></strong>
+                        <h5 th:text="${pet.bio}">bio</h5>
+                    </li>
+                    <li>
+                        <div class="button-container">
+                            <a th:href="@{/pet/editar/{id}(id=${pet.id})}" class=" edit-button"
+                                style="text-decoration: none; font-size: 15px;">Editar Perfil</a>
+                            <a th:href="@{/pet/deletar/{id}(id=${pet.id})}" class="delete-button-square" style="text-decoration: none; font-size: 15px;">excluir</a>
+                            <a th:href="@{/pet/meus-pets}" class=" back-button"  style="text-decoration: none; font-size: 15px;">voltar</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer3"></div>
+    <script th:src="@{/js/background.js}"></script>
+    <script th:src="@{/js/loadHeaderFooter.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+:root {
+    --azul-claro: #A2D5F2;
+    --verde: #81C784;
+    --laranja: #FFB74D;
+    --branco: #FFFFFF;
+    --cinza-claro: #E0E0E0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: var(--azul-claro);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--azul-claro);
+    padding: 1rem;
+}
+
+.hero {
+    background-color:  rgb(29, 32, 45);
+    color: var(--branco);
+    text-align: center;
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(17, 1, 45, 0.188);
+}
+
+
+.hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero .hero-background {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: 1;
+    transition: background-image 1s ease-in-out;
+}
+
+.hero .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero .hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero .hero-content .btn {
+    background-color: var(--laranja);
+    color: var(--branco);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    cursor: url('path/to/paw-cursor.png'), auto;
+}
+
+.hero .hero-content .btn:hover {
+    background-color: darken(var(--laranja), 10%);
+}
+
+.services {
+    background-color: var(--branco);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2rem;
+    color: var(--azul-claro);
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.services .row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.services .card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.services .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.services .card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid var(--verde);
+}
+
+.services .card-title {
+    color: var(--verde);
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+
+/* Animações */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#vetbanho {
+
+    @media (min-width: 600px) {
+        h5 {
+            font-size: 3.5em;
+            /* Limita o tamanho da fonte em telas maiores */
+        }
+
+        p {
+            font-size: 2.5em;
+        }
+
+    }
+
+    @media (min-width: 1024px) {
+        h5 {
+            font-size: 25px;
+            /* Travar o tamanho da fonte em 20px para telas maiores que 1024px */
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+    }
+}
+
+
+.container {
+
+    @media (min-width: 600px) {
+        h2 {
+            font-size: 3.5em;
+            /* Limita o tamanho da fonte em telas maiores */
+        }
+        div {
+            width: 80vw;
+        }
+
+    }
+
+    @media (min-width: 1024px) {
+        h2 {
+            font-size: 50px;
+        }
+        div {
+            width: 700px;
+            margin: 0 auto;
+        }
+
+    }
+}
+
+#vetbanho {
+    .services {
+        text-align: center;
+        padding: 2rem 0;
+    }
+    
+    .featured-products {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .products-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 0 auto;
+    }
+    
+    .product-card {
+        width: 500px;
+        height: 500px;
+        box-shadow: 3px 4px 10px rgba(21, 2, 60, 0.255);
+        transition: box-shadow 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .product-card img {
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
+    }
+    
+    .product-card .card-body {
+        height: 30%;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .product-card:hover {
+        box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.438), 0px 0px 20px rgba(255, 255, 255, 0.438), 0px 0px 30px rgba(68, 7, 189, 0.438);
+    }
+    
+    
+}
+.featured-products .container{
+    padding: 0;
+    margin: 0;
+    width: 90vw; 
+    max-width: none;
+    box-sizing: border-box;
+    
+}
+.featured-products .product-card {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    box-shadow: 3px 4px 10px rgba(21, 2, 60, 0.255);
+    transition: box-shadow 0.3s ease-in-out;
+}
+.product-card:hover{
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.438);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.438);
+    box-shadow: 0px 0px 30px rgba(68, 7, 189, 0.438);
+}
+
+.featured-products .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.featured-products .products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    width: 95vw;
+}
+
+.featured-products .card-body {
+    width: 280px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+}
+
+#herobutton{
+    width: 400px;
+    height: fit-content;
+    font-size: 35px;
+    box-shadow: 3px 4px 10px rgba(21, 2, 60, 0.255);
+}
+#herobutton:hover{
+    font-size: 40px;
+    width: 420px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: black;
+}
+

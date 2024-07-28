@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>Sobre Nós</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link th:href="@{/css/paginas-styles.css}" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="paginas">
+        <main class="about-us">
+            <section class="company-info">
+                <h2>Dedicatória</h2>
+                <p>Dedico esse projeto ao Davi, meu companheiro que sempre esteve me apoiando em todas as minhas aventuras</p>
+                <p>Joaquim, o meu filho de 8 meses, que é a principal razão pela qual eu me esforço tanto a cada dia.</p>
+                <p>Meus pais, que me apoiaram muito nessa jornada levando meu filho para morar com eles enquanto eu estudo.</p>
+                <p>A Chloe, Holly, Winnie, Mel, Mary, Angel, Cindy, Bidu, Katy, Nina e todos os animais que passaram por minha vida e me inspiraram em um trabalho tão delicado e inspirador.</p>
+            </section>
+            <section>
+                <h2>Por que "Ponte Arco-íris"?</h2>
+                <p>A Ponte Arco-Íris é um conto escrito por William N. Britton. No conto, Esta ponte é um viaduto mítico que dizem conectar o céu e a Terra — e, mais precisamente, um lugar onde donos de animais de estimação em luto se reúnem para sempre com seus amigos peludos que partiram.</p>
+                <h4>A Ponte Arco-Irís</h4>
+                <p>" Neste lado do paraíso, existe um lugar chamado Ponte do Arco-Íris. Quando um animal morre, aqueles que foram especialmente queridos por alguém vão para a Ponte do Arco-Íris.
+                    Lá existem campos e colinas para todos os nossos amigos especiais, pois assim eles podem correr e brincar juntos.
+                    Lá eles sempre têm muito da sua comida preferida, muita água fresca e muitos dias ensolarados para deixar nossos amigos sempre aquecidos e confortáveis. 
+                    Todos os animais que já estavam doentes e velhinhos se vêem renovados, cheios de saúde e vigor.
+                    Aqueles que foram machucados e mutilados estão perfeitos e fortes novamente, exatamente como nós nos lembramos deles em nossos sonhos sobre os dias que já se foram.
+                    Os animais que amamos vivem felizes e alegres, exceto por uma coisinha: cada um deles sente saudades de alguém que foi deixado para trás.
+                    Todos eles correm e brincam juntos, mas chega um dia em que um deles para de repente e olha fixo para as colinas ao longe. É como se ele tivesse ouvido um apito, ou algum tipo de sinal. Seus olhos brilhantes estão atentos; seu corpo começa a tremer levemente. De repente ele se separa do grupo, voando por sobre a grama verde, correndo o mais rápido que consegue.
+                    Você foi avistado, e quando você e seu amigo especial finalmente se encontram, vocês ficam unidos na alegria do reencontro para nunca mais se separarem. Os beijos de felicidade vão chover na sua face; suas mãos vão novamente acariciar a tão amada cabecinha, e você vai olhar mais uma vez dentro daqueles olhos cheios de confiança que há muito tempo haviam partido da sua vida, mas que nunca haviam se ausentado do seu coração. E então vocês, juntos, cruzarão a Ponte do Arco Íris.
+                    E seu Ciclo Sagrado estará completo mais uma vez"</p>
+            </section>
+            <section>
+                <div class="card border-0 img" style="width: fit-content;">
+                    <img th:src="@{/imagens/dogceu.jpg}" alt="acesso restrito" style="width: 30vw;min-width: 200px;">
+                </div>
+            </section>
+        </main>
+    </div>
+    <div id="footer3"></div>
+    <script th:src="@{/js/background.js}"></script>
+    <script th:src="@{/js/loadHeaderFooter.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Clientes</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/css/paginas-styles.css}" rel="stylesheet">
+</head>
+<body>
+    <div id="header"></div>
+    <div class="container" id="lista">
+        <h1 class="mt-5">Lista de Clientes</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th></th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Email</th>
+                    <th>Opção</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.id}"></td>
+                    <td><a th:href="@{/users/detalhes/{id}(id=${user.id})}" style="text-decoration: none; color: black;">
+                        <img th:src="@{/imagens/{filename}(filename=${user.profileImagePath != null && !user.profileImagePath.isEmpty() ? user.profileImagePath : 'default-user.png'})}"
+                                alt="Foto do Usuario" style="object-fit: contain;padding-right: 10px;" width="70"
+                                height="70" />
+                    </a>   
+                    </td>
+                    <td th:text="${user.name}"></td>
+                    <td th:text="${user.lastname}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td>
+                        <td>
+                            <div th:if="${#lists.size(user.role) > 0}">
+                                <!-- Obter o último item da lista -->
+                                <span th:with="lastRole=${user.role.get(user.role.size() - 1)}">
+                                    <!-- Verificar se o último ID é 1 -->
+                                    <div th:if="${lastRole == 1}">
+                                        <form th:action="@{/demote-to-user}" method="post" style="display: inline;">
+                                            <input type="hidden" name="id" th:value="${user.id}"/>
+                                            <button type="submit" class="btn btn-secondary">Tornar USER</button>
+                                        </form>
+                                    </div>
+                                    <!-- Verificar se o último ID é 2 -->
+                                    <div th:if="${lastRole == 2}">
+                                        <form th:action="@{/promote-to-admin}" method="post" style="display: inline;">
+                                            <input type="hidden" name="id" th:value="${user.id}"/>
+                                            <button type="submit" class="btn btn-primary">Promover a ADMIN</button>
+                                        </form>
+                                    </div>
+                                </span>
+                    </td>
+                    <td>
+                        <a th:href="@{/deletar/{id}(id=${user.id})}" class="btn btn-secondary">Apagar Usuario</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/register}" class="btn btn-primary" id="botao">Cadastrar Usuário</a>
+        <a th:href="@{/painel}" class="btn btn-secondary"id="botao">Voltar</a>
+    </div>
+    <div id="footer2"></div>
+    <script th:src="@{/js/background.js}"></script>
+    <script th:src="@{/js/loadHeaderFooter.js}"></script>
+</body>
+</html>

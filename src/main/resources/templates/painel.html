@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link th:href="@{/css/paginas-styles.css}" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container" id="lista">
+        <h1 class="mt-5">Painel</h1>
+        <div class="card mt-3" id="painel" style="display: flex;flex-wrap: wrap;">
+            <div class="card-body">
+                <a class="btn btn-primary" href="/pet">Lista de Pets</a>
+                <a class="btn btn-primary" href="/servico">Lista de Serviço</a>
+                <a class="btn btn-primary" href="/servico/novo">Adicionar Serviço</a>
+                <a class="btn btn-primary" href="/produto">Lista de Produtos</a>
+                <a class="btn btn-primary" href="/produto/novo">Adicionar Produto</a>
+                <a class="btn btn-primary" href="/agendamento">Agenda</a>
+                <a class="btn btn-primary" href="/users">Usuários Cadastrados</a>
+            </div>
+        </div>
+    </div>
+    <div id="footer2"></div>
+    <script th:src="@{/js/background.js}"></script>
+    <script th:src="@{/js/loadHeaderFooter.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

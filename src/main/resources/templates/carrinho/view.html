@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link th:href="@{/css/paginas-styles.css}" rel="stylesheet">
+    <title>Carrinho de Compras</title>
+</head>
+<body>
+    <div id="header"></div>
+    <div class="container mt-5" id="paginas">
+        <h1>Carrinho de Compras</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Total</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${carrinho.items}">
+                    <td>
+                        <a th:href="@{/produto/detalhes/{id}(id=${item.produto.id})}"
+                            style="text-decoration: none; color: black;">
+                            <img th:src="@{/imagens/{filename}(filename=${item.produto.imagemUrl})}" 
+                                    alt="Produto" width="70" height="fit-content" style="object-fit: cover;">
+                        </a>
+                    </td>
+                    <td th:text="${item.produto.nome}">Nome do Produto</td>
+                    <td th:text="${item.quantidade}">Quantidade</td>
+                    <td th:text="${item.produto.preco}">Preço</td>
+                    <td th:text="${item.formattedTotal}">Total</td>
+                    <td>
+                        <form th:action="@{/carrinho/remove}" method="post">
+                            <input type="hidden" name="itemId" th:value="${item.id}">
+                            <button type="submit" class="delete-button-square" style="padding: 5px;border-style: none;font-size: 12px;">Remover</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Total: <span th:text="${total}">0.00</span></h3>
+        <div class="button-container">
+             <form th:action="@{/carrinho/checkout}" method="post">
+            <button type="submit" class="plus-button mt-3" style="width: fit-content;padding: 5px;font-size: 20px;height: fit-content;">Finalizar Compra</button>
+        </form>
+        <a th:href="@{/produto/catalogo}" class="plus-button mt-3" style="width: fit-content;padding: 5px;font-size: 20px;background: linear-gradient(to top, #144a95, #366dc7);height: fit-content;">Continuar Comprando</a>
+        <a th:href="@{/carrinho/minhas-compras}"  class="plus-button mt-3" style="width: fit-content;padding: 5px;font-size: 20px;background: linear-gradient(to top, #064f1b, #0d812a);height: fit-content;">Compras Finalizadas</a>
+        </div>
+    </div>
+    <div id="footer3"></div>
+    <script th:src="@{/js/background.js}"></script>
+    <script th:src="@{/js/loadHeaderFooter.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

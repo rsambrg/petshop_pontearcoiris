@@ -1,0 +1,78 @@
+<div style="width: 90vw; height: 500px; display: block;">
+    <p ></p>
+</div>
+<footer class="bg-light py-3">
+    <style>
+        footer { 
+    display: flex;
+    flex-wrap: wrap;
+    position:static;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    text-align: center;
+    ul{
+        list-style-type: none;
+    }
+    a{
+        text-decoration: none;
+        color: var(--laranja);
+    }
+    a:hover{
+        color: var(--azul-claro);
+    }
+    p,h5,li {
+        color: var(--verde);
+    }
+    .footer-wrapper {
+        display: flex; /* Define o display como flexível */
+        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+        justify-content: space-between; /* Distribui os itens uniformemente ao longo do eixo principal */
+    }
+    
+    .footer-column {
+        flex: 1; /* Faz as colunas ocuparem o mesmo espaço disponível */
+        max-width: calc(50% - 10px); /* Define a largura máxima de cada coluna */
+        margin-right: 20px; /* Espaçamento entre as colunas */
+        box-sizing: border-box; /* Garante que a largura especificada inclua o padding e a borda */
+    }
+
+    .footer-3 {
+        flex: 3; /* Faz as colunas ocuparem o mesmo espaço disponível */
+        max-width: calc(50% - 10px); /* Define a largura máxima de cada coluna */
+        margin-right: 20px; /* Espaçamento entre as colunas */
+        box-sizing: border-box; /* Garante que a largura especificada inclua o padding e a borda */
+    }
+
+    
+}
+    </style>
+    <div>
+        <div class="footer-wrapper">
+            <div class="footer-column">
+                <ul>
+                    <li><a href="#">Página Inicial</a></li>
+                    <li><a href="/sobre">Sobre</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+              <ul>
+                    <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                </ul>  
+            </div>
+            <div class="footer-3" style="list-style-type: none;">
+                    <p>WhatsApp Delivery: (34) 0000-0000 Agendar Atendimento: (34) 0000-0000</p>
+            </div>
+            <div >
+                <p>
+                    <a href="/privacidade">Conheça nossa política de privacidade.</a>
+                </p>
+                <p>
+                    Todos os Direitos Reservados &copy; 2024 Ponte Arco-Íris.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

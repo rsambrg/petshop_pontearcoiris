@@ -1,0 +1,931 @@
+/* Paleta de cores */
+:root {
+    --azul-claro: #A2D5F2;
+    --verde: #81C784;
+    --laranja: #FFB74D;
+    --branco: #FFFFFF;
+    --cinza-claro: #E0E0E0;
+}
+
+/* Estilos gerais */
+body {
+    background-color: var(--cinza-claro);
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-position: bottom;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        background-position: center;
+    }
+}
+
+
+.container {
+    background-color: var(--azul-claro);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--verde);
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form-control {
+    border: 2px solid var(--cinza-claro);
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 8px var(--verde);
+}
+
+.btn-success,
+.btn-primary {
+    background-color: var(--laranja);
+    border-color: var(--laranja);
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-secondary,
+.btn-info {
+    background-color: var(--azul-claro);
+    border-color: var(--cinza-claro);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+form {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+form:hover {
+    transform: rotateY(10deg);
+}
+
+#form {
+    background-color: var(--branco);
+    float: left;
+    width: 90.0vw;
+    max-width: 700px;
+    height: fit-content;
+
+    label,
+    input,
+    button {
+        font-size: 6.5vw;
+        max-width: 600px;
+
+
+    }
+
+    @media (min-width: 600px) {
+
+        label,
+        input,
+        button {
+            font-size: 2.5em;
+        }
+
+        h1 {
+            font-size: 4em;
+        }
+    }
+
+    @media (min-width: 1024px) {
+
+        label,
+        input,
+        button {
+            font-size: 18px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+    }
+
+
+}
+
+thead,
+tbody {
+    width: fit-content;
+}
+
+#lista {
+    min-width: fit-content;
+    background-color: var(--branco);
+    float: left;
+
+    td,
+    th,
+    #botao {
+        font-size: 2em;
+    }
+
+    @media (min-width: 600px) {
+
+        td,
+        th,
+        #botao {
+            font-size: 2.5em;
+        }
+    }
+
+    @media (min-width: 1024px) {
+
+        td,
+        th,
+        #botao {
+            font-size: 18px;
+        }
+    }
+}
+
+
+
+
+/* Animações */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    animation: slideIn 1s ease-out;
+}
+
+form {
+    animation: fadeIn 2s ease-in-out;
+}
+
+button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+
+#form:hover,
+.container:hover {
+    opacity: 100%;
+}
+
+.featured-products .container {
+    padding: 0;
+    margin: 0;
+    width: 90vw;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+.featured-products .product-card {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.featured-products .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.featured-products .products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    width: 95vw;
+}
+
+.featured-products .card-body {
+    width: 280px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+}
+
+.vets-section {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.vet-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vet-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.vet-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.vet-info {
+    padding: 1rem;
+}
+
+.vet-info h3 {
+    margin: 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.vet-info p {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--primary-color);
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--laranja);
+}
+
+#paginas {
+    background-color: var(--branco);
+    padding: 50px;
+    padding-bottom: 200px;
+
+    .btn-vet,
+    .btn-banho {
+        font-size: 30px;
+    }
+
+    .btn:hover {
+        background-color: #FFB74D;
+    }
+}
+
+.benefits {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Permite que os cartões se movam para a linha seguinte se necessário */
+    gap: 20px;
+    /* Adiciona espaço entre os cartões */
+    padding: 2rem;
+}
+
+.benefit-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.benefit-info {
+    padding: 1rem;
+}
+
+.benefit-info h3 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.benefit-info p {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+
+.company-info,
+.our-mission {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    h1,
+    h2 {
+        margin: 0;
+        color: #333;
+    }
+}
+
+.job-openings,
+.application {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 1rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+        margin: 0;
+        color: #333;
+    }
+
+    a {
+        color: #81C784;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.contact-info,
+.contact-form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 1rem;
+    }
+
+    h1,
+    h2 {
+        margin: 0;
+        color: #333;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-top: 1rem;
+    }
+
+    input,
+    textarea {
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    button {
+        margin-top: 1rem;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 4px;
+        background-color: #81C784;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #66bb6a;
+    }
+}
+
+#petcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+
+    a:hover {
+        color: white;
+    }
+
+    .add-pet-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        /* Ajuste conforme necessário */
+        height: 40px;
+        /* Ajuste conforme necessário */
+        border-radius: 12px;
+        /* Bordas arredondadas */
+        background: linear-gradient(to top, #8d133f, #ff69b4);
+        /* Gradiente de rosa fúcsia */
+        color: white;
+        font-size: 30px;
+        /* Ajuste o tamanho do texto */
+        text-decoration: none;
+        position: relative;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        cursor: pointer;
+        border-style: outset;
+        border-color: gold;
+        border-width: 2px;
+    }
+
+    .add-pet-btn:hover {
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+    }
+
+    .add-pet-btn:active {
+        transform: rotate(360deg);
+    }
+
+    .add-pet-btn::before {
+        display: block;
+        font-size: 30px;
+        /* Ajuste o tamanho do símbolo */
+        text-align: center;
+    }
+
+}
+
+
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+.add-pet-btn:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.add-pet-btn:hover:after {
+    opacity: 1;
+}
+
+#petcontainer .detail-card {
+    position: relative;
+    /* Necessário para o posicionamento absoluto dos botões */
+    width: 150px;
+    height: 190px;
+    /* Ajuste a altura para acomodar os botões e a imagem */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+
+    li {
+        flex-wrap: wrap;
+    }
+}
+
+#petcontainer .detail-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+#petcontainer .detail-card .btn {
+    position: absolute;
+    border-style: none;
+}
+
+#petcontainer .detail-card .edit {
+    background: linear-gradient(to top, #2c7c30, #3cbf40);
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: white;
+    top: 5px;
+    /* Posiciona o botão no topo */
+    left: 5px;
+    /* Espaço do lado esquerdo */
+}
+
+#petcontainer .detail-card .edit:hover {
+    background: linear-gradient(to top, #3cbf40, #2c7c30);
+}
+
+#petcontainer .detail-card .delet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    /* Ajuste o tamanho do botão conforme necessário */
+    height: 20px;
+    /* Deve ser igual à largura para manter o formato circular */
+    border-radius: 50%;
+    /* Faz o botão ser circular */
+    background: linear-gradient(to top, #770707, #ff0000);
+    /* Gradiente de cor */
+    color: white;
+    font-size: 30px;
+    /* Ajuste o tamanho do símbolo */
+    text-decoration: none;
+    position: absolute;
+    /* Para posicionar o botão em relação ao pai */
+    bottom: 45px;
+    /* Espaço do fundo */
+    left: 5px;
+    /* Espaço do lado esquerdo */
+    transition: transform 0.3s ease-in-out;
+}
+
+#petcontainer .detail-card .delet:hover {
+    transform: scale(1.1);
+    /* Levemente aumenta o botão ao passar o mouse */
+}
+
+#petcontainer .detail-card .delet:active {
+    transform: scale(1);
+    /* Restaura o tamanho ao clicar */
+}
+
+#petcontainer .detail-card .delet::before {
+    font-size: 16px;
+    /* Ajuste o tamanho do símbolo conforme necessário */
+}
+
+
+#petcontainer .details-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    width: 80vw;
+}
+
+#petcontainer .card-body {
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+
+
+.profile-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.profile-photo {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+
+    img {
+        width: 320px;
+        height: 320px;
+        object-fit: cover;
+    }
+}
+
+.profile-photo img {
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.profile-info {
+    flex: 2;
+    padding: 20px;
+}
+
+.profile-info ul {
+    padding: 0;
+    margin: 0;
+}
+
+.profile-info ul li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.profile-info ul li p {
+    display: inline;
+    margin: 0;
+}
+
+.profile-info ul li strong {
+    color: #555;
+}
+
+.btn-edit {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+
+.delete-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    /* Ajuste o tamanho do botão conforme necessário */
+    height: 20px;
+    /* Deve ser igual à largura para manter o formato circular */
+    border-radius: 50%;
+    /* Faz o botão ser circular */
+    background: linear-gradient(to top, #770707, #ff0000);
+    /* Gradiente de cor */
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    top: 5px;
+    left: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.edit-button {
+    background: linear-gradient(to top, #2c7c30, #3cbf40);
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: white;
+    top: 5px;
+    /* Posiciona o botão no topo */
+    left: 5px;
+    /* Espaço do lado esquerdo */
+}
+
+.edit-button:hover {
+    background: linear-gradient(to top, #3cbf40, #2c7c30);
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    /* Espaço entre os botões */
+    padding: 10px;
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: white;
+    }
+}
+
+.delete-button-square {
+    background: linear-gradient(to top, #770707, #ff0000);
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    top: 5px;
+    left: 5px;
+}
+
+.back-button {
+    background: linear-gradient(to top, #4a34f4, hsl(223, 82%, 65%));
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: white;
+    top: 5px;
+    left: 5px;
+}
+.final-button  {
+    background: linear-gradient(to top, #52065b, hsl(289, 93%, 53%));
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    top: 5px;
+    left: 5px;
+    border-style: outset;
+    border-color: gold;
+    border-width: 2px;
+}
+.apoint-button {
+    background: linear-gradient(to top, #a34108, hsl(26, 100%, 50%));
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    top: 5px;
+    left: 5px;
+    border-style: outset;
+    border-color: gold;
+    border-width: 2px;
+}
+
+.plus-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(to top, #8d133f, #ff69b4);
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    border-style: outset;
+    border-color: gold;
+    border-width: 2px;
+}
+
+.plus-button:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.plus-button:active {
+    transform: rotate(360deg);
+}
+
+.plus-button::before {
+    display: block;
+    font-size: 30px;
+    text-align: center;
+}
+
+.plus-button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.plus-button:hover:after {
+    opacity: 1;
+}
+
+.back-button-seta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    /* Ajuste o tamanho do botão conforme necessário */
+    height: 30px;
+    /* Deve ser igual à largura para manter o formato circular */
+    border-radius: 20%;
+    /* Faz o botão ser circular */
+    background: linear-gradient(to top, #4127b7, #366dc7);
+    /* Gradiente de cor */
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    top: 5px;
+    left: 5px;
+    transition: transform 0.3s ease-in-out;
+}

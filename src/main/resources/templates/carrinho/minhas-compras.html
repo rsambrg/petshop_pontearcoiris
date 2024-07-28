@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Meus Agendamentos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link th:href="@{/css/paginas-styles.css}" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container" id="paginas">
+        <h1 class="mt-5">Pedidos Realizados</h1>
+        <div class="card-group">
+            <div class="card" th:each="item : ${compras}">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${item.produto.nome}">Nome do Produto</h5>
+                    <td>
+                        <a th:href="@{/produto/detalhes/{id}(id=${item.produto.id})}"
+                            style="text-decoration: none; color: black;">
+                            <img th:src="@{/imagens/{filename}(filename=${item.produto.imagemUrl})}" alt="Produto"
+                                width="70" height="fit-content" style="object-fit: cover;">
+                        </a>
+                    </td>
+                    <p class="card-text">Quantidade: <span th:text="${item.quantidade}">1</span></p>
+                    <p class="card-text">Preço: <span th:text="${item.produto.preco}">Preço</span></p>
+                    <p class="card-text" th:text="'Status: ' + ${item.status}"></p>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <a th:href="@{/produto/catalogo}" class="edit-button"
+                style="color: white; text-decoration: none; font-size: 16px;padding: 5px;border-style: outset;border-color: gold;border-width: 2px;border-radius: 30px;">Loja</a>
+            <a th:href="@{/carrinho}" class="back-button"
+                style="color: white; text-decoration: none;font-size: 16px;padding: 5px;border-style: outset;border-color: gold;border-width: 2px;border-radius: 30px;">Carrinho</a>
+        </div>
+    </div>
+
+    <div id="footer3"></div>
+    <script th:src="@{/js/background.js}"></script>
+    <script th:src="@{/js/loadHeaderFooter.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
